@@ -1,6 +1,6 @@
 from fastapi import FastAPI, UploadFile, File, Form, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
-from fastapi.middleware.sessions import SessionMiddleware
+from starlette.middleware.sessions import SessionMiddleware
 import pandas as pd
 import random
 import string
@@ -191,3 +191,4 @@ async def search(request: Request, file: UploadFile = File(...), query: str = Fo
 
     except Exception as e:
         return f"<h3>Errore: {str(e)}</h3>"
+
